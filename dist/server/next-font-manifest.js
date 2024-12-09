@@ -1,0 +1,1 @@
+self.__NEXT_FONT_MANIFEST="{\"pages\":{},\"app\":{\"/Users/mendeedavaa/Project/mendee/web/itss/intro/app/layout\":[\"static/media/9dd75fadc5b3df29-s.p.woff2\"]},\"appUsingSizeAdjust\":true,\"pagesUsingSizeAdjust\":false}"
