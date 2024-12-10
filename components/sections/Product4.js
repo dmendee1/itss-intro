@@ -3,10 +3,12 @@ import { useState } from "react"
 import FilterShopBox2 from "../shop/FilterShopBox2"
 
 export default function Product4() {
+    const [filter, setFilter] = useState('');
     const [activeIndex, setActiveIndex] = useState(1)
     const handleOnClick = (index) => {
         setActiveIndex(index)
     }
+
     return (
         <>
             <section className="product-area pt-95 pb-70">
@@ -15,18 +17,6 @@ export default function Product4() {
                         <div className="col-md-6 col-12">
                             <div className="tpsection mb-40">
                                 <h4 className="tpsection__title">Popular <span> Products <img src="assets/img/icon/title-shape-01.jpg" alt="" /></span></h4>
-                            </div>
-                        </div>
-                        <div className="col-md-6 col-12">
-                            <div className="tpnavbar">
-                                <nav>
-                                    <div className="nav nav-tabs" id="nav-tab" role="tablist">
-                                        <button className={activeIndex == 1 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(1)}>All</button>
-                                        <button className={activeIndex == 2 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(2)}>Popular</button>
-                                        <button className={activeIndex == 3 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(3)}>On Sale</button>
-                                        <button className={activeIndex == 4 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(4)}>Best Rated</button>
-                                    </div>
-                                </nav>
                             </div>
                         </div>
                     </div>

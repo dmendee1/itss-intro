@@ -63,34 +63,28 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCart
                             <div className="row align-items-center">
                                 <div className="col-xl-2 col-lg-3">
                                     <div className="cat-menu__category p-relative">
-                                        <a className="tp-cat-toggle" onClick={handleToggle} role="button"><i className="fal fa-bars" />Categories</a>
+                                        <a className="tp-cat-toggle" onClick={handleToggle} role="button"><i className="fal fa-bars" />Ангилал</a>
                                         <div className="category-menu category-menu-off" style={{ display: `${isToggled ? "block" : "none"}` }}>
                                             <ul className="cat-menu__list">
-                                                <li><Link href="/shop"><i className="fal fa-user" /> Candles</Link></li>
-                                                <li className="menu-item-has-children"><Link href="/shop"><i className="fal fa-flower-tulip" /> Handmade</Link>
+                                                <li><Link href="/shop"><i className="fal fa-user" /> Хяналтын камер</Link></li>
+                                                <li><Link href="/shop"><i className="fal fa-user" /> Нэрийн хуудас</Link></li>
+                                                <li><Link href="/shop"><i className="fal fa-user" /> Принтер</Link></li>
+                                                <li className="menu-item-has-children"><Link href="/shop"><i className="fal fa-flower-tulip" /> SmartSoft</Link>
                                                     <ul className="submenu">
-                                                        <li><Link href="/shop-2">Chair</Link></li>
-                                                        <li><Link href="/shop-2">Table</Link></li>
-                                                        <li><Link href="/shop">Wooden</Link></li>
+                                                        <li><Link href="/shop-2">Цаг бүртгэлийн систем</Link></li>
+                                                        <li><Link href="/shop-2">Эмнэлэгийн цахим бүртгэл</Link></li>
+                                                        <li><Link href="/shop">Фитнесийн гишүүнчлэл, хөнгөлөлтийн картын систем</Link></li>
                                                         <li><Link href="/shop">furniture</Link></li>
                                                         <li><Link href="/shop">Clock</Link></li>
                                                         <li><Link href="/shop">Gifts</Link></li>
                                                         <li><Link href="/shop">Crafts</Link></li>
                                                     </ul>
                                                 </li>
-                                                <li><Link href="/shop"><i className="fal fa-shoe-prints" /> Gift Sets</Link></li>
-                                                <li><Link href="/shop"><i className="fal fa-smile" /> Plastic Gifts</Link></li>
-                                                <li><Link href="/shop"><i className="fal fa-futbol" /> Handy Cream</Link></li>
-                                                <li><Link href="/shop"><i className="fal fa-crown" /> Cosmetics</Link></li>
-                                                <li><Link href="/shop"><i className="fal fa-gift" /> Silk Accessories</Link></li>
+                                                <li><Link href="/shop"><i className="fal fa-shoe-prints" /> Цаг бүртгэл</Link></li>
+                                                <li><Link href="/shop"><i className="fal fa-smile" /> Фитнесийн систем</Link></li>
+                                                <li><Link href="/shop"><i className="fal fa-futbol" /> Эмнэлэгийн систем</Link></li>
+                                                <li><Link href="/shop"><i className="fal fa-crown" /> Онгоцны билет захиалга</Link></li>
                                             </ul>
-                                            <div className="daily-offer">
-                                                <ul>
-                                                    <li><Link href="/shop">Value of the Day</Link></li>
-                                                    <li><Link href="/shop">Top 100 Offers</Link></li>
-                                                    <li><Link href="/shop">New Arrivals</Link></li>
-                                                </ul>
-                                            </div>
                                         </div>
                                     </div>
                                 </div>
