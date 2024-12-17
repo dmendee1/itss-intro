@@ -1,21 +1,7 @@
 {
-  "/_not-found": "app/_not-found.js",
-  "/cart/page": "app/cart/page.js",
-  "/about/page": "app/about/page.js",
-  "/coming-soon/page": "app/coming-soon/page.js",
-  "/faq/page": "app/faq/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/checkout/page": "app/checkout/page.js",
-  "/favicon.ico/route": "app/favicon.ico/route.js",
-  "/services/page": "app/services/page.js",
-  "/shop-2/page": "app/shop-2/page.js",
-  "/shop-details-2/page": "app/shop-details-2/page.js",
-  "/shop-location/page": "app/shop-location/page.js",
-  "/shop/[id]/page": "app/shop/[id]/page.js",
+  "/page": "app/page.js",
   "/shop/page": "app/shop/page.js",
-  "/sign-in/page": "app/sign-in/page.js",
-  "/shop-details/page": "app/shop-details/page.js",
-  "/wishlist/page": "app/wishlist/page.js",
-  "/track/page": "app/track/page.js",
-  "/page": "app/page.js"
+  "/about/page": "app/about/page.js",
+  "/contact/page": "app/contact/page.js",
+  "/not-found": "app/not-found.js"
 }

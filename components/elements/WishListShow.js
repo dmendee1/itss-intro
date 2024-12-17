@@ -11,7 +11,7 @@ export default function WishListShow() {
     }, [dispatch, reloadWishlist])
     return (
         <>
-            <span className="tp-product-count">{wishlist?.length}</span>
+            <span className="tp-product-count">5</span>
         </>
     )
 }

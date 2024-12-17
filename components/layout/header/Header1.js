@@ -6,10 +6,11 @@ import { useState } from "react"
 import HeaderMobSticky from "../HeaderMobSticky"
 import HeaderSticky from "../HeaderSticky"
 import HeaderTabSticky from "../HeaderTabSticky"
+import Category from "./Category"
 
 
 export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCartSidebar, handleCartSidebar }) {
-    const [isToggled, setToggled] = useState(true)
+    const [isToggled, setToggled] = useState(false)
     const handleToggle = () => setToggled(!isToggled)
     return (
         <>
@@ -57,52 +58,7 @@ export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCart
                         </div>
                     </div>
                 </div>
-                <div className="main-menu-area mt-20 d-none d-xl-block">
-                    <div className="for-megamenu p-relative">
-                        <div className="container">
-                            <div className="row align-items-center">
-                                <div className="col-xl-2 col-lg-3">
-                                    <div className="cat-menu__category p-relative">
-                                        <a className="tp-cat-toggle" onClick={handleToggle} role="button"><i className="fal fa-bars" />Ангилал</a>
-                                        <div className="category-menu category-menu-off" style={{ display: `${isToggled ? "block" : "none"}` }}>
-                                            <ul className="cat-menu__list">
-                                                <li><Link href="/shop"><i className="fal fa-user" /> Хяналтын камер</Link></li>
-                                                <li><Link href="/shop"><i className="fal fa-user" /> Нэрийн хуудас</Link></li>
-                                                <li><Link href="/shop"><i className="fal fa-user" /> Принтер</Link></li>
-                                                <li className="menu-item-has-children"><Link href="/shop"><i className="fal fa-flower-tulip" /> SmartSoft</Link>
-                                                    <ul className="submenu">
-                                                        <li><Link href="/shop-2">Цаг бүртгэлийн систем</Link></li>
-                                                        <li><Link href="/shop-2">Эмнэлэгийн цахим бүртгэл</Link></li>
-                                                        <li><Link href="/shop">Фитнесийн гишүүнчлэл, хөнгөлөлтийн картын систем</Link></li>
-                                                        <li><Link href="/shop">furniture</Link></li>
-                                                        <li><Link href="/shop">Clock</Link></li>
-                                                        <li><Link href="/shop">Gifts</Link></li>
-                                                        <li><Link href="/shop">Crafts</Link></li>
-                                                    </ul>
-                                                </li>
-                                                <li><Link href="/shop"><i className="fal fa-shoe-prints" /> Цаг бүртгэл</Link></li>
-                                                <li><Link href="/shop"><i className="fal fa-smile" /> Фитнесийн систем</Link></li>
-                                                <li><Link href="/shop"><i className="fal fa-futbol" /> Эмнэлэгийн систем</Link></li>
-                                                <li><Link href="/shop"><i className="fal fa-crown" /> Онгоцны билет захиалга</Link></li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div className="col-xl-7 col-lg-6">
-                                    <div className="main-menu">
-                                        <nav id="mobile-menu">
-                                            <ul>
-                                                <li><Link href="/">Нүүр</Link></li>
-                                                <li><Link href="/about">Бидний тухай</Link></li>
-                                                <li><Link href="/contact">Холбоо барих</Link></li>
-                                            </ul>
-                                        </nav>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                {Category(handleToggle, isToggled)}
             </header>
             <HeaderSticky scroll={scroll} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} />
             <HeaderTabSticky scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} />

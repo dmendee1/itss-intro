@@ -8,7 +8,7 @@ const ShopCard = ({ item, addToCart, addToWishlist }) => {
                         <div className="tpproduct__thumbitem p-relative">
                             <Link href={`/shop/${item.id}`}>
                                 <img src={`/assets/img/product/${item.imgf}`} alt="product-thumb" />
-                                <img className="thumbitem-secondary" src={`/assets/img/product/${item.imgb}`} alt="product-thumb" />
+                                <img className="thumbitem-secondary" src={`/assets/img/product/${item.imgf}`} alt="product-thumb" />
                             </Link>
                             <div className="tpproduct__thumb-bg">
                                 <div className="tpproductactionbg">
@@ -55,20 +55,6 @@ const ShopCard = ({ item, addToCart, addToWishlist }) => {
                                         <span className="tpproductdot__termshape-border purple-product-border" />
                                     </div>
                                 </Link>
-                            </div>
-                            <div className="tpproduct__rating">
-                                <ul>
-                                    <li>
-                                        <Link href="#"><i className="fas fa-star" /></Link>
-                                        <Link href="#"><i className="fas fa-star" /></Link>
-                                        <Link href="#"><i className="fas fa-star" /></Link>
-                                        <Link href="#"><i className="fas fa-star" /></Link>
-                                        <Link href="#"><i className="far fa-star" /></Link>
-                                    </li>
-                                    <li>
-                                        <span>(81)</span>
-                                    </li>
-                                </ul>
                             </div>
                         </div>
                     </div>
