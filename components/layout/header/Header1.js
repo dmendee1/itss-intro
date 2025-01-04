@@ -10,7 +10,7 @@ import Category from "./Category"
 
 
 export default function Header1({ scroll, isMobileMenu, handleMobileMenu, isCartSidebar, handleCartSidebar }) {
-    const [isToggled, setToggled] = useState(false)
+    const [isToggled, setToggled] = useState(true)
     const handleToggle = () => setToggled(!isToggled)
     return (
         <>

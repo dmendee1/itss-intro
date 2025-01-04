@@ -87,8 +87,6 @@ export default function Layout({
           handleCartSidebar={handleCartSidebar}
         />
       ) : null}
-      {/* {headerStyle == 4 ? <Header4 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} /> : null}
-            {headerStyle == 5 ? <Header5 scroll={scroll} isMobileMenu={isMobileMenu} handleMobileMenu={handleMobileMenu} isCartSidebar={isCartSidebar} handleCartSidebar={handleCartSidebar} /> : null} */}
       <Sidebar
         isMobileMenu={isMobileMenu}
         handleMobileMenu={handleMobileMenu}

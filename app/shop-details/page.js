@@ -38,13 +38,9 @@ const swiperOptions = {
     },
 }
 export default function ShopDetails() {
-    const [activeIndex, setActiveIndex] = useState(1)
+    const [activeIndex, setActiveIndex] = useState(4)
     const handleOnClick = (index) => {
         setActiveIndex(index)
-    }
-    const [activeIndex2, setActiveIndex2] = useState(4)
-    const handleOnClick2 = (index) => {
-        setActiveIndex2(index)
     }
     return (
         <>
@@ -53,34 +49,7 @@ export default function ShopDetails() {
                     <section className="product-area pt-80 pb-25">
                         <div className="container">
                             <div className="row">
-                                <div className="col-lg-5 col-md-12">
-                                    <div className="tpproduct-details__nab pr-50 mb-40">
-                                        <div className="d-flex align-items-start">
-                                            <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                                <button className={activeIndex2 == 4 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick2(4)}>
-                                                    <img src="/assets/img/product/product-1.jpg" alt="" />
-                                                </button>
-                                                <button className={activeIndex2 == 5 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick2(5)}>
-                                                    <img src="/assets/img/product/product-2.jpg" alt="" />
-                                                </button>
-                                                <button className={activeIndex2 == 6 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick2(6)}>
-                                                    <img src="/assets/img/product/product-3.jpg" alt="" />
-                                                </button>
-                                            </div>
-                                            <div className="tab-content" id="v-pills-tabContent">
-                                                <div className={activeIndex2 == 4 ? "tab-pane fade show active" : "tab-pane fade"}>
-                                                    <img src="/assets/img/product/product-1.jpg" alt="" />
-                                                </div>
-                                                <div className={activeIndex2 == 5 ? "tab-pane fade show active" : "tab-pane fade"}>
-                                                    <img src="/assets/img/product/product-2.jpg" alt="" />
-                                                </div>
-                                                <div className={activeIndex2 == 6 ? "tab-pane fade show active" : "tab-pane fade"}>
-                                                    <img src="/assets/img/product/product-3.jpg" alt="" />
-                                                </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
+                                {print_image(activeIndex, handleOnClick)}
                                 {newFunction_2()}
                                 {newFunction()}
                             </div>
@@ -276,6 +245,37 @@ export default function ShopDetails() {
             </Layout>
         </>
     )
+}
+
+function print_image(activeIndex, handleOnClick) {
+    return <div className="col-lg-5 col-md-12">
+        <div className="tpproduct-details__nab pr-50 mb-40">
+            <div className="d-flex align-items-start">
+                <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button className={activeIndex == 4 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(4)}>
+                        <img src="/assets/img/product/product-1.jpg" alt="" />
+                    </button>
+                    <button className={activeIndex == 5 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(5)}>
+                        <img src="/assets/img/product/product-2.jpg" alt="" />
+                    </button>
+                    <button className={activeIndex == 6 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(6)}>
+                        <img src="/assets/img/product/product-3.jpg" alt="" />
+                    </button>
+                </div>
+                <div className="tab-content" id="v-pills-tabContent">
+                    <div className={activeIndex == 4 ? "tab-pane fade show active" : "tab-pane fade"}>
+                        <img src="/assets/img/product/product-1.jpg" alt="" />
+                    </div>
+                    <div className={activeIndex == 5 ? "tab-pane fade show active" : "tab-pane fade"}>
+                        <img src="/assets/img/product/product-2.jpg" alt="" />
+                    </div>
+                    <div className={activeIndex == 6 ? "tab-pane fade show active" : "tab-pane fade"}>
+                        <img src="/assets/img/product/product-3.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 }
 
 function newFunction_2() {

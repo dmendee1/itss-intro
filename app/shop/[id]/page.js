@@ -52,7 +52,7 @@ const ShopSingleDynamicV1 = () => {
         return () => { }
     }, [id])
 
-    const [activeIndex, setActiveIndex] = useState(2)
+    const [activeIndex, setActiveIndex] = useState(1)
     const handleOnClick = (index) => {
         setActiveIndex(index)
     }
@@ -74,157 +74,8 @@ const ShopSingleDynamicV1 = () => {
                 <section className="product-area pt-80 pb-50">
                     <div className="container">
                         <div className="row">
-                            <div className="col-lg-5 col-md-12">
-                                <div className="tpproduct-details__list-img">
-                                    <div className="tpproduct-details__list-img-item">
-                                        <img src={`/assets/img/product/${product.imgf}`} alt="" />
-                                    </div>
-                                    <div className="tpproduct-details__list-img-item">
-                                        <img src={`/assets/img/product/${product.imgb}`} alt="" />
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-5 col-md-7">
-                                <div className="tpproduct-details__content tpproduct-details__sticky">
-                                    <div className="tpproduct-details__tag-area d-flex align-items-center mb-5">
-                                        <span className="tpproduct-details__tag">Dress</span>
-                                        <div className="tpproduct-details__rating">
-                                            <Link href="#"><i className="fas fa-star" /></Link>
-                                            <Link href="#"><i className="fas fa-star" /></Link>
-                                            <Link href="#"><i className="fas fa-star" /></Link>
-                                        </div>
-                                        <a className="tpproduct-details__reviewers">10 Reviews</a>
-                                    </div>
-                                    <div className="tpproduct-details__title-area d-flex align-items-center flex-wrap mb-5">
-                                        <h3 className="tpproduct-details__title">{product?.title}</h3>
-                                        <span className="tpproduct-details__stock">In Stock</span>
-                                    </div>
-                                    <div className="tpproduct-details__price mb-30">
-                                        <del>$9.35</del>
-                                        <span>$ {product?.price?.max}</span>
-                                    </div>
-                                    <div className="tpproduct-details__pera">
-                                        <p>Priyoshop has brought to you the Hijab 3 Pieces Combo Pack PS23. It is a <br />completely modern design and you feel comfortable to put on this hijab. <br />Buy it at the best price.</p>
-                                    </div>
-                                    <div className="tpproduct-details__count d-flex align-items-center flex-wrap mb-25">
-                                        <div className="product-quantity">
-                                            <div className="item-quantity">
-                                                <input
-                                                    type="number"
-                                                    className="qty"
-                                                    name="qty"
-                                                    defaultValue={1}
-                                                    min={1}
-                                                    onChange={(e) =>
-                                                        qtyHandler(product?.id, e.target.value)
-                                                    }
-                                                />
-                                            </div>
-                                        </div>
-                                        <div className="tpproduct-details__cart ml-20">
-                                            <button onClick={() => addToCart(product.id)}><i className="fal fa-shopping-cart" /> Add To Cart</button>
-                                        </div>
-                                        <div className="tpproduct-details__wishlist ml-20">
-                                            <button><i className="fal fa-heart" /></button>
-                                        </div>
-                                    </div>
-                                    <div className="tpproductdot mb-30">
-                                        <Link className="tpproductdot__variationitem" href="#">
-                                            <div className="tpproductdot__termshape">
-                                                <span className="tpproductdot__termshape-bg" />
-                                                <span className="tpproductdot__termshape-border" />
-                                            </div>
-                                        </Link>
-                                        <Link className="tpproductdot__variationitem" href="#">
-                                            <div className="tpproductdot__termshape">
-                                                <span className="tpproductdot__termshape-bg red-product-bg" />
-                                                <span className="tpproductdot__termshape-border red-product-border" />
-                                            </div>
-                                        </Link>
-                                        <Link className="tpproductdot__variationitem" href="#">
-                                            <div className="tpproductdot__termshape">
-                                                <span className="tpproductdot__termshape-bg orange-product-bg" />
-                                                <span className="tpproductdot__termshape-border orange-product-border" />
-                                            </div>
-                                        </Link>
-                                        <Link className="tpproductdot__variationitem" href="#">
-                                            <div className="tpproductdot__termshape">
-                                                <span className="tpproductdot__termshape-bg purple-product-bg" />
-                                                <span className="tpproductdot__termshape-border purple-product-border" />
-                                            </div>
-                                        </Link>
-                                    </div>
-                                    <div className="tpproduct-details__information tpproduct-details__code">
-                                        <p>SKU:</p><span>BO1D0MX8SJ</span>
-                                    </div>
-                                    <div className="tpproduct-details__information tpproduct-details__categories">
-                                        <p>Categories:</p>
-                                        <span><Link href="#">T-Shirts,</Link></span>
-                                        <span><Link href="#">Tops,</Link></span>
-                                        <span><Link href="#">Womens</Link></span>
-                                    </div>
-                                    <div className="tpproduct-details__information tpproduct-details__tags">
-                                        <p>Tags:</p>
-                                        <span><Link href="#">fashion,</Link></span>
-                                        <span><Link href="#">t-shirts,</Link></span>
-                                        <span><Link href="#">women</Link></span>
-                                    </div>
-                                    <div className="tpproduct-details__information tpproduct-details__social">
-                                        <p>Share:</p>
-                                        <Link href="#"><i className="fab fa-facebook-f" /></Link>
-                                        <Link href="#"><i className="fab fa-twitter" /></Link>
-                                        <Link href="#"><i className="fab fa-behance" /></Link>
-                                        <Link href="#"><i className="fab fa-youtube" /></Link>
-                                        <Link href="#"><i className="fab fa-linkedin" /></Link>
-                                    </div>
-                                </div>
-                            </div>
-                            <div className="col-lg-2 col-md-5">
-                                <div className="tpproduct-details__condation">
-                                    <ul>
-                                        <li>
-                                            <div className="tpproduct-details__condation-item d-flex align-items-center">
-                                                <div className="tpproduct-details__condation-thumb">
-                                                    <img src="/assets/img/icon/product-det-1.png" alt="" className="tpproduct-details__img-hover" />
-                                                </div>
-                                                <div className="tpproduct-details__condation-text">
-                                                    <p>Free Shipping apply to all<br />orders over $100</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="tpproduct-details__condation-item d-flex align-items-center">
-                                                <div className="tpproduct-details__condation-thumb">
-                                                    <img src="/assets/img/icon/product-det-2.png" alt="" className="tpproduct-details__img-hover" />
-                                                </div>
-                                                <div className="tpproduct-details__condation-text">
-                                                    <p>Guranteed 100% Organic<br />from natural farmas</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="tpproduct-details__condation-item d-flex align-items-center">
-                                                <div className="tpproduct-details__condation-thumb">
-                                                    <img src="/assets/img/icon/product-det-3.png" alt="" className="tpproduct-details__img-hover" />
-                                                </div>
-                                                <div className="tpproduct-details__condation-text">
-                                                    <p>1 Day Returns if you change<br />your mind</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                        <li>
-                                            <div className="tpproduct-details__condation-item d-flex align-items-center">
-                                                <div className="tpproduct-details__condation-thumb">
-                                                    <img src="/assets/img/icon/product-det-4.png" alt="" className="tpproduct-details__img-hover" />
-                                                </div>
-                                                <div className="tpproduct-details__condation-text">
-                                                    <p>Covid-19 Info: We keep<br />delivering.</p>
-                                                </div>
-                                            </div>
-                                        </li>
-                                    </ul>
-                                </div>
-                            </div>
+                            {print_image(activeIndex, handleOnClick)}
+                            {print_product_info(product, qtyHandler, addToCart)}
                         </div>
                     </div>
                 </section>
@@ -626,3 +477,129 @@ const ShopSingleDynamicV1 = () => {
 }
 
 export default ShopSingleDynamicV1
+
+function print_product_info(product, qtyHandler, addToCart) {
+    return <div className="col-lg-7 col-md-12">
+        <div className="tpproduct-details__content tpproduct-details__sticky">
+            <div className="tpproduct-details__tag-area d-flex align-items-center mb-5">
+                <span className="tpproduct-details__tag">Dress</span>
+                <div className="tpproduct-details__rating">
+                    <Link href="#"><i className="fas fa-star" /></Link>
+                    <Link href="#"><i className="fas fa-star" /></Link>
+                    <Link href="#"><i className="fas fa-star" /></Link>
+                </div>
+                <a className="tpproduct-details__reviewers">10 Reviews</a>
+            </div>
+            <div className="tpproduct-details__title-area d-flex align-items-center flex-wrap mb-5">
+                <h3 className="tpproduct-details__title">{product?.title}</h3>
+                <span className="tpproduct-details__stock">In Stock</span>
+            </div>
+            <div className="tpproduct-details__price mb-30">
+                {/* <del>$55.0</del> */}
+                <span>$ {product?.price?.max}</span>
+            </div>
+            <div className="tpproduct-details__pera">
+                <p>Priyoshop has brought to you the Hijab 3 Pieces Combo Pack PS23. It is a completely modern design and you feel comfortable to put on this hijab. Buy it at the best price.</p>
+            </div>
+            <div className="tpproduct-details__count d-flex align-items-center flex-wrap mb-25">
+                <div className="product-quantity">
+                    <div className="item-quantity">
+                        <input
+                            type="number"
+                            className="qty"
+                            name="qty"
+                            defaultValue={1}
+                            min={1}
+                            onChange={(e) => qtyHandler(product?.id, e.target.value)} />
+                    </div>
+                </div>
+                <div className="tpproduct-details__cart ml-20">
+                    <button onClick={() => addToCart(product.id)}><i className="fal fa-shopping-cart" /> Add To Cart</button>
+                </div>
+                <div className="tpproduct-details__wishlist ml-20">
+                    <button><i className="fal fa-heart" /></button>
+                </div>
+            </div>
+            <div className="tpproductdot mb-30">
+                <Link className="tpproductdot__variationitem" href="#">
+                    <div className="tpproductdot__termshape">
+                        <span className="tpproductdot__termshape-bg" />
+                        <span className="tpproductdot__termshape-border" />
+                    </div>
+                </Link>
+                <Link className="tpproductdot__variationitem" href="#">
+                    <div className="tpproductdot__termshape">
+                        <span className="tpproductdot__termshape-bg red-product-bg" />
+                        <span className="tpproductdot__termshape-border red-product-border" />
+                    </div>
+                </Link>
+                <Link className="tpproductdot__variationitem" href="#">
+                    <div className="tpproductdot__termshape">
+                        <span className="tpproductdot__termshape-bg orange-product-bg" />
+                        <span className="tpproductdot__termshape-border orange-product-border" />
+                    </div>
+                </Link>
+                <Link className="tpproductdot__variationitem" href="#">
+                    <div className="tpproductdot__termshape">
+                        <span className="tpproductdot__termshape-bg purple-product-bg" />
+                        <span className="tpproductdot__termshape-border purple-product-border" />
+                    </div>
+                </Link>
+            </div>
+            <div className="tpproduct-details__information tpproduct-details__code">
+                <p>SKU:</p><span>BO1D0MX8SJ</span>
+            </div>
+            <div className="tpproduct-details__information tpproduct-details__categories">
+                <p>Categories:</p>
+                <span><Link href="#">T-Shirts,</Link></span>
+                <span><Link href="#">Tops,</Link></span>
+                <span><Link href="#">Womens</Link></span>
+            </div>
+            <div className="tpproduct-details__information tpproduct-details__tags">
+                <p>Tags:</p>
+                <span><Link href="#">fashion,</Link></span>
+                <span><Link href="#">t-shirts,</Link></span>
+                <span><Link href="#">women</Link></span>
+            </div>
+            <div className="tpproduct-details__information tpproduct-details__social">
+                <p>Share:</p>
+                <Link href="#"><i className="fab fa-facebook-f" /></Link>
+                <Link href="#"><i className="fab fa-twitter" /></Link>
+                <Link href="#"><i className="fab fa-behance" /></Link>
+                <Link href="#"><i className="fab fa-youtube" /></Link>
+                <Link href="#"><i className="fab fa-linkedin" /></Link>
+            </div>
+        </div>
+    </div>
+}
+
+function print_image(activeIndex, handleOnClick) {
+    return <div className="col-lg-5 col-md-12">
+        <div className="tpproduct-details__nab pr-50 mb-40">
+            <div className="d-flex align-items-start">
+                <div className="nav flex-column nav-pills me-3" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                    <button className={activeIndex == 1 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(1)}>
+                        <img src="/assets/img/product/product-1.jpg" alt="" />
+                    </button>
+                    <button className={activeIndex == 2 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(2)}>
+                        <img src="/assets/img/product/product-2.jpg" alt="" />
+                    </button>
+                    <button className={activeIndex == 3 ? "nav-link active" : "nav-link"} onClick={() => handleOnClick(3)}>
+                        <img src="/assets/img/product/product-3.jpg" alt="" />
+                    </button>
+                </div>
+                <div className="tab-content" id="v-pills-tabContent">
+                    <div className={activeIndex == 1 ? "tab-pane fade show active" : "tab-pane fade"}>
+                        <img src="/assets/img/product/product-1.jpg" alt="" />
+                    </div>
+                    <div className={activeIndex == 2 ? "tab-pane fade show active" : "tab-pane fade"}>
+                        <img src="/assets/img/product/product-2.jpg" alt="" />
+                    </div>
+                    <div className={activeIndex == 3 ? "tab-pane fade show active" : "tab-pane fade"}>
+                        <img src="/assets/img/product/product-3.jpg" alt="" />
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
