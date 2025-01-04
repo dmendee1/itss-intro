@@ -23,7 +23,6 @@ const FilterShopBox2 = ({ itemStart, itemEnd }) => {
     const { shopList, shopSort } = useSelector((state) => state.filter)
     const {
         price,
-
         category,
         color,
         brand,

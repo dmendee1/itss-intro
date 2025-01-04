@@ -5,13 +5,9 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
     return (
         <>
             <div className={`tpsideinfo ${isMobileMenu ? "tp-sidebar-opened" : ""}`}>
-                <button className="tpsideinfo__close" onClick={handleMobileMenu}>Close<i className="fal fa-times ml-10" /></button>
+                <button className="tpsideinfo__close" onClick={handleMobileMenu}>Хаах<i className="fal fa-times ml-10" /></button>
                 <div className="tpsideinfo__search text-center pt-35">
                     <span className="tpsideinfo__search-title mb-20">What Are You Looking For?</span>
-                    <form action="#">
-                        <input type="text" placeholder="Search Products..." />
-                        <button><i className="fal fa-search" /></button>
-                    </form>
                 </div>
                 <div className="tpsideinfo__nabtab">
                     <ul className="nav nav-pills mb-3" id="pills-tab" role="tablist">
@@ -26,7 +22,7 @@ export default function Sidebar({ isMobileMenu, handleMobileMenu }) {
                         <div className="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab" tabIndex={0}>
                             <MobileMenu />
                         </div>
-                        <div className="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabIndex={0}>
+                        <div className="tab-pane fade show active" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab" tabIndex={0}>
                             <div className="tpsidebar-categories">
                                 <ul>
                                     <li><Link href="/shop">Furniture</Link></li>

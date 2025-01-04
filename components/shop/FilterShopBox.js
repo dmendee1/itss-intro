@@ -1,46 +1,31 @@
 'use client'
-import { addCart } from "@/features/shopSlice"
-import { addWishlist } from "@/features/wishlistSlice"
-import { Fragment, useState } from "react"
-import { useDispatch, useSelector } from "react-redux"
+import { Fragment, useState, useEffect } from "react"
 import products from "../../data/products"
-import {
-    addPerPage,
-    addSort,
-    addprice,
-    clearBrand,
-    clearCategory,
-    clearColor,
-} from "../../features/filterSlice"
-import {
-    clearBrandToggle,
-    clearCategoryToggle,
-    clearColorToggle,
-} from "../../features/productSlice"
 import ShopCard from "./ShopCard"
 import ShopCardList from "./ShopCardList"
 
 const FilterShopBox = () => {
-    const { shopList, shopSort } = useSelector((state) => state.filter)
-    const {
-        price,
+    const [shopList, setShopList] = useState({
+        price: { min: 0, max: 100 },
+        category: [],
+        color: [],
+        brand: []
+    });
+    const [shopSort, setShopSort] = useState({
+        sort: "",
+        perPage: { start: 0, end: 0 }
+    });
 
-        category,
-        color,
-        brand,
-    } = shopList || {}
-
-    const { sort, perPage } = shopSort
-
-    const dispatch = useDispatch()
+    const { price, category, color, brand } = shopList;
+    const { sort, perPage } = shopSort;
 
     const addToCart = (id) => {
         const item = products?.find((item) => item.id === id)
-        dispatch(addCart({ product: item }))
+        // Handle add to cart logic
     }
     const addToWishlist = (id) => {
         const item = products?.find((item) => item.id === id)
-        dispatch(addWishlist({ product: item }))
+        // Handle add to wishlist logic
     }
 
     const [activeIndex, setActiveIndex] = useState(2)
@@ -51,10 +36,6 @@ const FilterShopBox = () => {
     // location filter
     const priceFilter = (item) =>
         item?.price?.min >= price?.min && item?.price?.max <= price?.max
-
-    // product-type filter
-
-
 
     // product-type filter
     const categoryFilter = (item) =>
@@ -74,7 +55,6 @@ const FilterShopBox = () => {
 
     let content = products
         ?.filter(priceFilter)
-
         ?.filter(categoryFilter)
         ?.filter(colorFilter)
         ?.filter(brandFilter)
@@ -87,36 +67,28 @@ const FilterShopBox = () => {
 
     // sort handler
     const sortHandler = (e) => {
-        dispatch(addSort(e.target.value))
+        setShopSort(prevState => ({ ...prevState, sort: e.target.value }));
     }
 
     // per page handler
     const perPageHandler = (e) => {
-        const pageData = JSON.parse(e.target.value)
-        dispatch(addPerPage(pageData))
+        const pageData = JSON.parse(e.target.value);
+        setShopSort(prevState => ({ ...prevState, perPage: pageData }));
     }
 
     // clear all filters
     const clearAll = () => {
-        dispatch(addprice({ min: 0, max: 100 }))
-
-
-
-
-        dispatch(clearCategory())
-        dispatch(clearCategoryToggle())
-
-        dispatch(clearColor())
-        dispatch(clearColorToggle())
-
-        dispatch(clearBrand())
-        dispatch(clearBrandToggle())
-
-        dispatch(addSort(""))
-        dispatch(addPerPage({ start: 0, end: 0 }))
+        setShopList({
+            price: { min: 0, max: 100 },
+            category: [],
+            color: [],
+            brand: []
+        });
+        setShopSort({
+            sort: "",
+            perPage: { start: 0, end: 0 }
+        });
     }
-
-
 
     return (
         <>
@@ -130,10 +102,8 @@ const FilterShopBox = () => {
                     <div className="col-sm-6">
                         <div className="product-navtabs d-flex justify-content-end align-items-center">
                             <div className="tp-shop-selector">
-
                                 {price?.min !== 0 ||
                                     price?.max !== 100 ||
-
                                     category?.length !== 0 ||
                                     color?.length !== 0 ||
                                     brand?.length !== 0 ||
@@ -148,7 +118,6 @@ const FilterShopBox = () => {
                                         Clear All
                                     </button>
                                 ) : undefined}
-
                                 <select
                                     value={sort}
                                     className="chosen-single form-select"
@@ -158,8 +127,6 @@ const FilterShopBox = () => {
                                     <option value="asc">Newest</option>
                                     <option value="des">Oldest</option>
                                 </select>
-
-
                                 <select
                                     onChange={perPageHandler}
                                     className="chosen-single form-select ms-3 "
@@ -211,8 +178,6 @@ const FilterShopBox = () => {
                     </div>
                 </div>
             </div>
-
-
             <div className="row mb-50">
                 <div className="col-lg-12">
                     <div className="tab-content" id="nav-tabContent">
@@ -220,7 +185,6 @@ const FilterShopBox = () => {
                             {
                                 products
                                     ?.filter(priceFilter)
-
                                     ?.filter(categoryFilter)
                                     ?.filter(colorFilter)
                                     ?.filter(brandFilter)
@@ -237,7 +201,6 @@ const FilterShopBox = () => {
                                 {
                                     products
                                         ?.filter(priceFilter)
-
                                         ?.filter(categoryFilter)
                                         ?.filter(colorFilter)
                                         ?.filter(brandFilter)
@@ -253,7 +216,6 @@ const FilterShopBox = () => {
                     </div>
                 </div>
             </div>
-
         </>
     )
 }

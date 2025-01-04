@@ -32,6 +32,16 @@ export default function Header3({
               </div>
               <div className="col-xl-10 col-lg-9">
                 <div className="header-meta-info d-flex align-items-center justify-content-between">
+                  <div className="header-search-bar">
+                    <form action="#">
+                      <div className="search-info p-relative">
+                        {/* <button className="header-search-icon">
+                          <i className="fal fa-search" />
+                        </button> */}
+                        {/* <input type="text" placeholder="Search products..." /> */}
+                      </div>
+                    </form>
+                  </div>
                   <div className="header-meta header-brand d-flex align-items-center">
                     <div className="header-meta__lang">
                       <ul>

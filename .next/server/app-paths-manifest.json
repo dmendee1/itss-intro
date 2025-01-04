@@ -1,7 +1,7 @@
 {
+  "/not-found": "app/not-found.js",
   "/page": "app/page.js",
-  "/shop/page": "app/shop/page.js",
-  "/about/page": "app/about/page.js",
-  "/contact/page": "app/contact/page.js",
-  "/not-found": "app/not-found.js"
+  "/shop/[id]/page": "app/shop/[id]/page.js",
+  "/shop-details-2/page": "app/shop-details-2/page.js",
+  "/shop-details/page": "app/shop-details/page.js"
 }

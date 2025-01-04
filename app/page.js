@@ -1,7 +1,7 @@
 
 import Layout from "@/components/layout/Layout"
 import Blog4 from "@/components/sections/Blog4"
-import DealProduct from "@/components/sections/DealProduct3"
+import DealProduct from "@/components/sections/DealProduct4"
 import Product4 from "@/components/sections/Product1"
 import SelectedProduct from "@/components/sections/SelectedProduct"
 import Slider from "@/components/sections/Slider3"

@@ -21,11 +21,7 @@ export default function menu(handleToggle, isToggled) {
                   className="category-menu category-menu-off"
                   style={{ display: `${isToggled ? "block" : "none"}` }}
                 >
-                  <ul className="cat-menu__list">
-                    {menus.menus.map((e) => {
-                      return displayMenu(e);
-                    })}
-                  </ul>
+                  {displayCategory()}
                 </div>
               </div>
             </div>
@@ -69,17 +65,29 @@ export default function menu(handleToggle, isToggled) {
   );
 }
 
-function displayMenu(menu) {
+function displayCategory() {
+  return (
+    <ul className="cat-menu__list">
+      {menus.menus.map((e, i) => {
+        return displayMenu(e, i);
+      })}
+    </ul>
+  );
+}
+
+function displayMenu(menu, index) {
   if (menu.children) {
     return (
-      <li key={menu.id} className="menu-item-has-children">
+      <li key={index} className="menu-item-has-children">
         <Link href="/shop">
           <i className="fal fa-flower-tulip" /> {menu.name}
         </Link>
         <ul className="submenu">
           {menu.children.map((child, i) => (
             <li key={i}>
-              <Link key={i} href={child.href}>{child.name}</Link>
+              <Link key={i} href={child.href}>
+                {child.name}
+              </Link>
             </li>
           ))}
         </ul>
@@ -87,7 +95,7 @@ function displayMenu(menu) {
     );
   } else {
     return (
-      <li key={menu.id}>
+      <li key={index}>
         <Link href={menu.href}>
           <i className="fal fa-user" /> {menu.name}
         </Link>
